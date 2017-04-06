@@ -7,7 +7,6 @@ matrix:
   - osx_image: xcode8.2
   - osx_image: xcode7.3
     env: HOMEBREW_DEVELOPER=1 HANG_FOREVER=NO
-  - osx_image: xcode6.4
   exclude:
   - osx_image: xcode7.3
 osx_image:
@@ -15,9 +14,6 @@ osx_image:
 install:
 - brew update
 - brew tap --full cartr/qt4
-- git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-- git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout split-core-webkit-tools
-- git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
 script:
 - travis_wait 90 bash ./build-bottles.sh
 deploy:

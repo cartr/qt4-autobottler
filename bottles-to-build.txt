@@ -1,1 +1,3 @@
-qt-webkit@2.3
+shiboken@1.2
+pyside@1.2
+pyside-tools@1.2
