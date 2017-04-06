@@ -15,7 +15,7 @@ install:
 - brew update
 - brew tap --full cartr/qt4
 script:
-- travis_wait 90 bash ./build-bottles.sh
+- bash ./build-bottles.sh
 deploy:
   provider: bintray
   file: bintray.json
