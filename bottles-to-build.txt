@@ -1,1 +1,2 @@
-qt@4
+qt-webkit@2.3
+shiboken
