@@ -1,0 +1,27 @@
+{
+    "package": {
+        "name": "bottles",
+        "repo": "autobottle-qt4",
+        "subject": "cartr",
+        "desc": "Automatic push from Travis",
+        "website_url": "https://github.com/cartr/homebrew-qt4-bottle-testing",
+        "issue_tracker_url": "https://github.com/cartr/homebrew-qt4-bottle-testing/issues",
+        "vcs_url": "https://github.com/cartr/homebrew-qt4-bottle-testing.git",
+        "licenses": ["MIT"],
+        "public_download_numbers": true,
+        "public_stats": true
+    },
+
+    "version": {
+        "name": "all",
+        "desc": "All the bottles",
+        "released": "1970-01-01",
+        "gpgSign": false
+    },
+
+    "files":
+        [
+        {"includePattern": "./(.*\.tar\.gz)", "uploadPattern": "/$1"}
+        ],
+    "publish": true
+}
