@@ -25,9 +25,7 @@ env:
   - FORMULA="treeline"
   - FORMULA="valkyrie"
 osx_image:
-  - xcode6.4
   - xcode7.3
-  - xcode8.3
 install:
   - brew update
   - brew tap cartr/qt4
