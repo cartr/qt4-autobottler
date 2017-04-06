@@ -1,2 +1,1 @@
 qt-webkit@2.3
-shiboken@1.2
