@@ -1,7 +1,6 @@
 language: cpp
 os: osx
 osx_image:
-  matrix:
   - xcode8.2
   - xcode7.3
   - xcode6.4
