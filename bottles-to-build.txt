@@ -1,4 +1,1 @@
-cuty_capt
-frescobaldi
-libechonest
-puddletag
+qt-webkit@2.3
