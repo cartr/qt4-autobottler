@@ -1,4 +1,3 @@
 shiboken@1.2
 pyside@1.2
 pyside-tools@1.2
-pyqt
