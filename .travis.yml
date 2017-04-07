@@ -14,6 +14,7 @@ install:
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-plugins-imports-paths
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
+script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
   - travis_wait 90 brew install --build-bottle cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/${FORMULA}
