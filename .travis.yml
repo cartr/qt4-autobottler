@@ -1,36 +1,19 @@
 language: cpp
 os: osx
-osx_image:
-  - xcode8.2
-  - xcode7.3
-  - xcode6.4
+matrix:
+  include:
+    - osx_image: xcode8.2
+    - osx_image: xcode7.3
+osx_image: xcode6.4
 env:
   global:
-  - HOMEBREW_DEVELOPER=1
-  matrix:
-  - FORMULA="qt@4"
-  - FORMULA="qt-webkit@2.3"
-  - FORMULA="pyqt@4"
-  - FORMULA="shiboken@1.2"
-  - FORMULA="pyside@1.2"
-  - FORMULA="pyside-tools@1.2"
-  - FORMULA="automoc4"
-  - FORMULA="coin@3.1.3"
-  - FORMULA="cuty_capt"
-  - FORMULA="ezlupdate"
-  - FORMULA="frescobaldi"
-  - FORMULA="libechonest"
-  - FORMULA="puddletag"
-  - FORMULA="qbzr"
-  - FORMULA="qwt-qt4"
-  - FORMULA="qwtpolar"
-  - FORMULA="rcssserver"
-  - FORMULA="sqliteman"
-  - FORMULA="treeline"
-  - FORMULA="valkyrie"
+  - HOMEBREW_DEVELOPER=1 FORMULA="qt@4"
 install:
   - brew update
-  - brew tap cartr/qt4
+  - brew tap --full cartr/qt4
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-plugins-imports-paths
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
   - travis_wait 90 brew install --build-bottle cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/${FORMULA}
