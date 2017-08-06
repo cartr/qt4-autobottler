@@ -12,7 +12,7 @@ install:
   - brew update
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-plugins-imports-paths
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-webkit-build-sandbox
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
