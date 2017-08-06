@@ -8,7 +8,7 @@ matrix:
 osx_image: xcode6.4
 env:
   global:
-  - HOMEBREW_DEVELOPER=1 FORMULA="qt@4"
+  - HOMEBREW_DEVELOPER=1 FORMULA="qt-webkit@2.3"
 install:
   - brew update
   - brew tap --full cartr/qt4
