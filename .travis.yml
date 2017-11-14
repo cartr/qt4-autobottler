@@ -8,12 +8,12 @@ matrix:
 osx_image: xcode6.4
 env:
   global:
-  - HOMEBREW_DEVELOPER=1 FORMULA="qt-webkit@2.3"
+  - HOMEBREW_DEVELOPER=1 FORMULA="qt@4"
 install:
   - brew update
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-webkit-build-sandbox
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-macdeployqt-plugins
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
