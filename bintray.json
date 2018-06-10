@@ -13,8 +13,8 @@
     },
 
     "version": {
-        "name": "all",
-        "desc": "All the bottles",
+        "name": "2018",
+        "desc": "New year, new version",
         "released": "1970-01-01",
         "gpgSign": false
     },
