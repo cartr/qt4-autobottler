@@ -13,11 +13,11 @@ install:
   - brew update
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout fix-macdeployqt-plugins
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout qfixed-fix
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
-  - travis_wait 90 brew install --build-bottle cartr/qt4/${FORMULA}
+  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/${FORMULA}
 deploy:
   provider: bintray
