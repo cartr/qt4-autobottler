@@ -20,10 +20,10 @@ script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
   - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/${FORMULA}
-#deploy:
-#  provider: bintray
-#  file: bintray.json
-#  user: cartr
-#  skip_cleanup: true
-#  key:
-#    secure: lAiWj6mj4OJihGvdCV97tmgIEI9c6kxOhxBC6SublkSiLEk6c/E5MEuPVvgOIbiAEfy1efh5grAFVmaj1+MyR5LnjtFj47/9pSHbvLGysXAZTQ4OE/sKlfo/YqIlvL+dxqZbzYbA+xqCbABc4PEiLAJ1DWEFPy8rpt/4WQH6pjK+I3ChnlhEHNYi4eAXbghk2nDMWIvE3qdg1Q7S1Ty5YvmlMqehr4bSwUeaK6wYBXH650K9e3hiCHG2W9ny8VtuRXiYdtPwTnQOEjgYphm/bz6I8w6DxJ+xH9rCmWh0VNi1saZDhm0GxZFNNnT2O7/LvSfYOee5IiPcQOS+HBTRiMUK2cZWh7HHbcBPzHUxZT3r+NsjZtPOzIdEVOG42wqDU/tf3fYy9lAsXPgONzHbH3BU1fcc0G9HJMtjs8KAeJJAGpYkwfGWXvRvFaJLcXu/8MKp/PHnobAe7glxDw3Ev2RjAJFTCNKzGHzJ0dZp3EkOBQoSZCqAGcbmfvzzVceokldhh4L6llG/uT0+lVq/Eda/gghtL05+PbSU8JE9gI8Nr465nUmlC4mzg+fLbVjX+YwNCp6R9f6YuzgL48/R1ll6wOV6JZ06f93FAAy7wdlXIZdq+KUuPzau/kMzaBwf8ikeXqQt5uZhrFnfaHS2vEzYS2UQvsnsr/6yFDuRMbs=
+deploy:
+  provider: bintray
+  file: bintray.json
+  user: cartr
+  skip_cleanup: true
+  key:
+    secure: lAiWj6mj4OJihGvdCV97tmgIEI9c6kxOhxBC6SublkSiLEk6c/E5MEuPVvgOIbiAEfy1efh5grAFVmaj1+MyR5LnjtFj47/9pSHbvLGysXAZTQ4OE/sKlfo/YqIlvL+dxqZbzYbA+xqCbABc4PEiLAJ1DWEFPy8rpt/4WQH6pjK+I3ChnlhEHNYi4eAXbghk2nDMWIvE3qdg1Q7S1Ty5YvmlMqehr4bSwUeaK6wYBXH650K9e3hiCHG2W9ny8VtuRXiYdtPwTnQOEjgYphm/bz6I8w6DxJ+xH9rCmWh0VNi1saZDhm0GxZFNNnT2O7/LvSfYOee5IiPcQOS+HBTRiMUK2cZWh7HHbcBPzHUxZT3r+NsjZtPOzIdEVOG42wqDU/tf3fYy9lAsXPgONzHbH3BU1fcc0G9HJMtjs8KAeJJAGpYkwfGWXvRvFaJLcXu/8MKp/PHnobAe7glxDw3Ev2RjAJFTCNKzGHzJ0dZp3EkOBQoSZCqAGcbmfvzzVceokldhh4L6llG/uT0+lVq/Eda/gghtL05+PbSU8JE9gI8Nr465nUmlC4mzg+fLbVjX+YwNCp6R9f6YuzgL48/R1ll6wOV6JZ06f93FAAy7wdlXIZdq+KUuPzau/kMzaBwf8ikeXqQt5uZhrFnfaHS2vEzYS2UQvsnsr/6yFDuRMbs=
