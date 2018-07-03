@@ -14,8 +14,8 @@ install:
   - brew update
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout qobject-icc
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout -b bcipriano-master
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull https://github.com/bcipriano/homebrew-qt4.git master
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
   - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
