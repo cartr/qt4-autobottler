@@ -15,7 +15,7 @@ install:
   - rm -rf /usr/local/lib/*
   - brew update
   - brew upgrade
-  - brew install git gmp
+  - brew install git gmp openssl@1.1 libyaml
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout -b albertosottile-master
