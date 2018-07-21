@@ -11,8 +11,9 @@ env:
   global:
   - HOMEBREW_DEVELOPER=1 FORMULA="frescobaldi"
 install:
+  - /usr/bin/yes | pip2 uninstall numpy
   - brew update
-  - brew upgrade python
+  - brew upgrade python || /usr/bin/true
   - brew upgrade
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
