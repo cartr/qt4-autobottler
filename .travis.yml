@@ -23,9 +23,10 @@ install:
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/poppler-qt4
   - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/poppler-qt4
+  - brew bottle cartr/qt4/poppler-qt4
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
   - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
-  - brew bottle cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
+  - brew bottle cartr/qt4/${FORMULA}
 deploy:
   provider: bintray
   file: bintray.json
