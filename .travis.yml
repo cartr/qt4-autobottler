@@ -9,17 +9,17 @@ matrix:
 osx_image: xcode6.4
 env:
   global:
-  - HOMEBREW_DEVELOPER=1 FORMULA="qt@4"
+  - HOMEBREW_DEVELOPER=1 FORMULA="frescobaldi"
 install:
   - brew update
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout -b bcipriano-master
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull https://github.com/bcipriano/homebrew-qt4.git master
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout -b albertosottile-master
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull https://github.com/albertosottile/homebrew-qt4.git master
 script:
-  - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
-  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
-  - brew bottle cartr/qt4/${FORMULA}
+  - brew install --only-dependencies --build-bottle cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
+  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
+  - brew bottle cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
 deploy:
   provider: bintray
   file: bintray.json
