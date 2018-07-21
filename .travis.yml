@@ -11,17 +11,19 @@ env:
   global:
   - HOMEBREW_DEVELOPER=1 FORMULA="frescobaldi"
 install:
-  - /usr/bin/yes | pip2 uninstall numpy
+  - brew remove --force $(brew list) --ignore-dependencies
+  - rm -rf /usr/local/lib/*
   - brew update
-  - brew upgrade python || /usr/bin/true
   - brew upgrade
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout -b albertosottile-master
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ pull https://github.com/albertosottile/homebrew-qt4.git master
 script:
-  - brew install --only-dependencies --build-bottle cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
-  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
+  - brew install --only-dependencies --build-bottle cartr/qt4/poppler-qt4
+  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/poppler-qt4
+  - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
+  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/poppler-qt4 cartr/qt4/${FORMULA}
 deploy:
   provider: bintray
