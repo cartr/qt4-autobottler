@@ -15,10 +15,10 @@ install:
   - brew upgrade
   - brew tap --full cartr/qt4
   - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ fetch
-  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout openssl-1.1
+  - git -C /usr/local/Homebrew/Library/Taps/cartr/homebrew-qt4/ checkout readd-openssl-1.0
 script:
   - brew install --only-dependencies --build-bottle cartr/qt4/${FORMULA}
-  - travis_wait 90 brew install --build-bottle --build-from-source cartr/qt4/${FORMULA}
+  - travis_wait 90 brew install --build-bottle cartr/qt4/${FORMULA}
   - brew bottle cartr/qt4/${FORMULA}
 deploy:
   provider: bintray
