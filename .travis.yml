@@ -7,7 +7,7 @@ matrix:
 osx_image: xcode9.4
 env:
   global:
-  - HOMEBREW_DEVELOPER=1 FORMULA="openssl@1.0"
+  - HOMEBREW_DEVELOPER=1 FORMULA="qt@4"
 install:
   - brew remove swiftlint python@2
   - brew update
