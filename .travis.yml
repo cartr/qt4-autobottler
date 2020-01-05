@@ -9,7 +9,7 @@ env:
   global:
   - HOMEBREW_DEVELOPER=1 FORMULA="openssl@1.0"
 install:
-  - brew remove swiftlint
+  - brew remove swiftlint python@2
   - brew update
   - brew upgrade
   - brew tap --full cartr/qt4
